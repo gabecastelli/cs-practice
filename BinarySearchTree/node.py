@@ -27,9 +27,9 @@ class Node:
             node = Node(key)
 
         if node.key == key:
-            raise Exception(f'Duplicate key: key {key} already exists.')
+            raise ValueError(f'Duplicate key: key {key} already exists.')
         
-        if node.key < key:
+        if node.key > key:
             node.right = Node.insert(node.right, key)
         else:
             node.left = Node.insert(node.left, key)
